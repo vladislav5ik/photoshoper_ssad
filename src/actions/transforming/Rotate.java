@@ -1,6 +1,7 @@
-package actions;
+package actions.transforming;
 
-import main.Image;
+import actions.Action;
+import image.Image;
 /**
  * Feature that rotate image by 90 degrees right round
  */

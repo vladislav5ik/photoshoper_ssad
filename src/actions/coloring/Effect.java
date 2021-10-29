@@ -1,6 +1,7 @@
-package actions;
+package actions.coloring;
 
-import main.Image;
+import actions.Action;
+import image.Image;
 import java.util.Scanner;
 /**
  * Feature that take one of the effects to the image.

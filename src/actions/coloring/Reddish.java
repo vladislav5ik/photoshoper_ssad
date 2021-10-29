@@ -1,6 +1,7 @@
-package actions;
+package actions.coloring;
 
-import main.Image;
+import actions.Action;
+import image.Image;
 /**
  * Feature that make image more red color
  */

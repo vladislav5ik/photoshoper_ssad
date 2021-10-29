@@ -1,4 +1,4 @@
-package main;
+package image;
 /**
  * Class of pixel of an image. Each of pixels have color property (RGB).
  */

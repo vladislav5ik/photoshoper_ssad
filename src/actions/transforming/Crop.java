@@ -1,5 +1,5 @@
-package actions;
-import main.Image;
+package actions.transforming;
+import image.Image;
 import actions.Action;
 /**
  * Feature that cut the part of an image

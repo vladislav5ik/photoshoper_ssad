@@ -1,7 +1,9 @@
-package main;
+package image;
 
 
 import actions.Action;
+import adapter.Adapter;
+
 /**
  * Main class of the program.
  * similar to the interface between the program and the user
@@ -16,10 +18,13 @@ public class ImageEditor {
     public ImageEditor(Image image) {
         this.image = image;
     }
-    public void edit(Action action) {
+
+    public void edit(Adapter adapter) {
         menu = new menuBar();
-        System.out.print("Action : ");
-        this.image = action.doAction(image);
+        System.out.println("Performing action :");
+        this.image = adapter.doAction(image);
+        System.out.println();
+
     }
     public class menuBar {
 

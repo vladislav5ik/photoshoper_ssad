@@ -1,8 +1,8 @@
 package actions;
-import main.Image;
+import image.Image;
 /**
  * Interface for all features (actions) that edit image.
  */
 public interface Action {
-    public Image doAction(Image image);
+    Image doAction(Image image);
 }

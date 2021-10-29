@@ -1,6 +1,7 @@
-package actions;
+package actions.adjusting;
 
-import main.Image;
+import actions.Action;
+import image.Image;
 /**
  * Feature that edit contrast of the image
  */
