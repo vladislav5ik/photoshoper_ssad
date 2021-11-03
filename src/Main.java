@@ -1,15 +1,9 @@
-import adapter.Action;
+import actions.ActionType;
 import adapter.Adapter;
-import image.Extension;
+import image.ExtensionType;
 import image.Image;
 import image.ImageEditor;
 import image.Triple;
-import actions.transforming.Crop;
-import actions.adjusting.AdjustBrightness;
-import actions.adjusting.AdjustContrast;
-import actions.adjusting.GammaCorrection;
-import actions.coloring.Effect;
-import actions.transforming.Rotate;
 
 /**
  * Program start function.
@@ -19,30 +13,36 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //the creation of an image object
+        //The creation of an image object
         Triple[][] triple = new Triple[10][10];
-        Image img = new Image(triple, 10, 10, Extension.jpg);
+        Image img = new Image(triple, 10, 10, ExtensionType.jpg);
         ImageEditor editor = new ImageEditor(img);
 
-        //Since action class objects are derived from action,
-        //you can universally perform any action on an image using the doAction method
-        //Creating action objects themselves
-        Adapter adapter = new Adapter(Action.crop);
-        editor.edit(adapter);
-        adapter.changeAction(Action.adjustbrightness);
-        editor.edit(adapter);
-        adapter.changeAction(Action.adjustcontrast);
-        editor.edit(adapter);
-        adapter.changeAction(Action.gammacorrection);
-        editor.edit(adapter);
-        adapter.changeAction(Action.effect);
-        editor.edit(adapter);
-        adapter.changeAction(Action.rotate);
+        //To apply an action to the image, we need
+        //to create an Adapter - an object that acts
+        //as an intermediary between the actions.
+        Adapter adapter = new Adapter(ActionType.crop);
         editor.edit(adapter);
 
+        //The following code specifies the action
+        //and applies it to the image
+        adapter.changeAction(ActionType.adjustbrightness);
+        editor.edit(adapter);
 
-        //you can use the menu bar to make actions that
-        //do not change the image (for example, zoom in)
+        adapter.changeAction(ActionType.adjustcontrast);
+        editor.edit(adapter);
+
+        adapter.changeAction(ActionType.gammacorrection);
+        editor.edit(adapter);
+
+        adapter.changeAction(ActionType.effect);
+        editor.edit(adapter);
+
+        adapter.changeAction(ActionType.rotate);
+        editor.edit(adapter);
+
+        //you can use the menu bar to make other actions
+        //that affects image editor window (for example, zoom in)
         editor.menu.zoom();
         editor.menu.save();
 
@@ -50,10 +50,12 @@ public class Main {
         editor.menu.close();
 
         //you can open another image and work with it
-        Image img2 = new Image(triple, 10, 10, Extension.png);
+        Image img2 = new Image(triple, 10, 10, ExtensionType.png);
         editor.menu.open(img2);
-        adapter.changeAction(Action.adjustcontrast);
+
+        adapter.changeAction(ActionType.adjustcontrast);
         editor.edit(adapter);
+
         editor.menu.close();
     }
 }

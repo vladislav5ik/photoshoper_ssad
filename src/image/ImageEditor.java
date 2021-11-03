@@ -1,7 +1,6 @@
 package image;
 
 
-import actions.Action;
 import adapter.Adapter;
 
 /**
@@ -24,7 +23,6 @@ public class ImageEditor {
         System.out.println("Performing action :");
         this.image = adapter.doAction(image);
         System.out.println();
-
     }
     public class menuBar {
 

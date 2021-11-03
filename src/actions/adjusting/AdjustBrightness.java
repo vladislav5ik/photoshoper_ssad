@@ -1,9 +1,8 @@
 package actions.adjusting;
 
 import actions.Action;
-import image.Extension;
+import image.ExtensionType;
 import image.Image;
-
 
 /**
  * Feature that edit brightness of the image
@@ -12,7 +11,7 @@ public class AdjustBrightness implements Action {
 
     @Override
     public Image doAction(Image image) {
-        if(image.extension != Extension.png){
+        if(image.format != ExtensionType.png){
             System.out.println("Error. Can perform action only with .png images");
             return image;
         }
