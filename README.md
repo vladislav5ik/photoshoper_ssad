@@ -1,27 +1,27 @@
-#Image Editor Project
+# Image Editor Project
 Our team was faced with the question of developing software that would allow us
 to modify photographs. To develop this software we decided to use the Adapter
 pattern, because the program contained classes that could not interact directly due to
 the peculiarities of the implementation.
-####Problem:
+#### Problem:
 The peculiarities of the implementation are as follows, classes of actions, which
 are located in the package actions (i.e. AdjustBrightness, GammaCorrection, Rotate
 and others) can only process images in PNG format. The ImageEdter class, on the
 other hand, must handle any picture format represented in the ExtensionType
 enumerator.
-####Solution:
+#### Solution:
 In our solution, the Adapter class is the intermediate link between the ImageEditor
 class and the Actions class. Using the convertToPng and convertFromPng methods, it
 converts the image into the PNG format, triggers the necessary action on the image
 and returns the image in its original format.
-####More about details:
+#### More about details:
 
 All elements, our solution contains: Action interface, enumerators ActionType,
 ExtentionType and classes ImageEditor, Adapter, Image, menuBar, Triple,
 AdjustBrightness, GammaCorrection, AdjustContrast, Rotate, Crop, Effect, Reddish,
 Greenish, Bluish.
 
-#####What parts of the program are used for:
+##### What parts of the program are used for:
 * The ImageEditor class - the main class representing the application, all changes
 to the images are made using it
 * The menuBar class - part of the ImageEditor class representing the opening,
