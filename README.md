@@ -41,4 +41,4 @@ Image class to denote the format
 we need
 * Class Triple – color settings used to simulate an image(work as RGB)
 
-![uml](uml_adapter.JPG)
+![uml](uml_adapter.jpg)
