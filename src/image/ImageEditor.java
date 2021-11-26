@@ -2,6 +2,8 @@ package image;
 
 
 import adapter.Adapter;
+import history.History;
+import history.Snapshot;
 
 /**
  * Main class of the program.
@@ -13,16 +15,26 @@ import adapter.Adapter;
  */
 public class ImageEditor {
     protected Image image;
+    private History imageHistory;
     public menuBar menu;
     public ImageEditor(Image image) {
         this.image = image;
+        this.imageHistory = new History();
+        this.imageHistory.backup(this.image.makeSnapshot());
     }
 
     public void edit(Adapter adapter) {
         menu = new menuBar();
         System.out.println("Performing action :");
         this.image = adapter.doAction(image);
+        this.imageHistory.backup(this.image.makeSnapshot());
         System.out.println();
+    }
+
+    public void undo(){
+        Snapshot snapshot = imageHistory.undo();
+        this.image = snapshot.restore();
+        System.out.println("Used backup date: "+snapshot.getSnapshotDate());
     }
     public class menuBar {
 

@@ -1,4 +1,8 @@
 package image;
+
+import history.Memento;
+import history.Snapshot;
+
 /**
  * Class containing image data
  * In the real program this data will change (now - not yet)
@@ -15,4 +19,10 @@ public class Image {
         this.width = width;
         this.format = extension;
     }
+
+    public Snapshot makeSnapshot(){
+        return new Snapshot(this.data, this.height, this.width, this.format);
+    }
+
+
 }
