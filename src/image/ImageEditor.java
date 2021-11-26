@@ -19,8 +19,7 @@ public class ImageEditor {
     public menuBar menu;
     public ImageEditor(Image image) {
         this.image = image;
-        this.imageHistory = new History();
-        this.imageHistory.backup(this.image.makeSnapshot());
+        this.imageHistory = new History(this.image.makeSnapshot());
     }
 
     public void edit(Adapter adapter) {

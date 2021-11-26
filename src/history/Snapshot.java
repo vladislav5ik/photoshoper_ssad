@@ -7,6 +7,10 @@ import image.Triple;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+/*
+Class containing copy of an image at a certain point in time.
+*/
 public class Snapshot implements Memento{
     private Triple[][] data;
     private int height;
@@ -31,17 +35,4 @@ public class Snapshot implements Memento{
         return new Image(this.data, this.height, this.width, this.format);
     }
 
-//
-//    public Triple[][] getData(){
-//        return this.data;
-//    }
-//    public int getHeight(){
-//        return this.height;
-//    }
-//    public int getWidth(){
-//        return this.width;
-//    }
-//    public ExtensionType getFormat(){
-//        return this.format;
-//    }
 }

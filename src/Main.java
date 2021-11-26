@@ -19,9 +19,6 @@ public class Main {
         ImageEditor editor = new ImageEditor(img);
 
         try {
-            //To apply an action to the image, we need
-            //to create an Adapter - an object that acts
-            //as an intermediary between the actions.
             Adapter adapter = new Adapter(ActionType.crop);
             editor.edit(adapter);
 
