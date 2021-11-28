@@ -1,21 +1,21 @@
-#Image Editor Project
+# Image Editor Project
 Our team was faced with the question of developing software that would allow us to modify
 photographs. To develop this software we decided to use the Memento pattern, because we want to
 add an option for the user to return back to a previous version of the picture, in case the change
 made was not needed.
-###Problem:
+### Problem:
 A picture saving system should be created so that you don't have to manually create a copy of the
 picture in order to safely perform the next action.
-###Solution:
+### Solution:
 Snapshot represents stored image data to be written to the image in case of return. The history
 class represents the storage of previous versions of the image and methods for interacting with
 them.
-####More about details:
+#### More about details:
 All elements, our solution contains: Action, Memento interface, enumerators ActionType,
 ExtentionType and classes ImageEditor, Adapter, Image, menuBar, Triple, AdjustBrightness,
 GammaCorrection, AdjustContrast, Rotate, Crop, Effect, Reddish, Greenish, Bluish, Snapshot,
 History.
-####What parts of the program are used for:
+#### What parts of the program are used for:
 - The ImageEditor class - the main class representing the application, all changes to the
 images are made using it
 - The menuBar class - part of the ImageEditor class representing the opening, closing and
